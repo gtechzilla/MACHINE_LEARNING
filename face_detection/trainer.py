@@ -5,7 +5,11 @@ import sqlite3
 import urllib
 recognizer =  cv2.face.LBPHFaceRecognizer_create()
 detector= cv2.CascadeClassifier('cascades_/haarcascade_frontalface_default.xml')
+<<<<<<< HEAD
 url="http://10.42.0.145:8080/shot.jpg"
+=======
+url="http://192.168.0.19:8080/shot.jpg"
+>>>>>>> 785ddf862d473beadd8e6119082f6ce8aa02557c
 
 def getImagesAndLabels(path):
     #get the path of all the files in the folder
@@ -61,6 +65,7 @@ def face_detector(img, size=0.5):
         roi=cv2.resize(roi,(200,200))
     return img,roi
 
+<<<<<<< HEAD
 cap=cv2.VideoCapture(url)
 
 while True:
@@ -69,6 +74,16 @@ while True:
     imgNP=np.array(bytearray(imgRSP.read()),dtype=np.uint8)
     frame=cv2.imdecode(imgNP,-1)
     frame=cv2.resize(frame,None,fx=2,fy=1.5,interpolation=cv2.INTER_LINEAR)
+=======
+cap=cv2.VideoCapture(0)
+
+while True:
+    ret,frame=cap.read()
+    #imgRSP=urllib.urlopen(url)
+    #imgNP=np.array(bytearray(imgRSP.read()),dtype=np.uint8)
+    #frame=cv2.imdecode(imgNP,-1)
+    #frame=cv2.resize(frame,None,fx=2,fy=1.5,interpolation=cv2.INTER_LINEAR)
+>>>>>>> 785ddf862d473beadd8e6119082f6ce8aa02557c
 
 
     frame=cv2.flip(frame,1)

@@ -3,20 +3,34 @@ import numpy as np
 import sqlite3
 import urllib
 
+<<<<<<< HEAD
 url="http://10.42.0.145:8080/shot.jpg"
 cam = cv2.VideoCapture(url)
 detector=cv2.CascadeClassifier('cascades_/haarcascade_frontalface_default.xml')
 
+=======
+cam = cv2.VideoCapture(0)
+detector=cv2.CascadeClassifier('cascades_/haarcascade_frontalface_default.xml')
+#url="http://192.168.0.19:8080/shot.jpg"
+>>>>>>> 785ddf862d473beadd8e6119082f6ce8aa02557c
 
 def include_update(Id,name):
 	conn=sqlite3.connect("my_users.db")
 	cmd="SELECT * FROM people WHERE ID="+str(Id)
 	cursor=conn.execute(cmd)
+<<<<<<< HEAD
 	recordExist=0
 	for row in cursor:
 		recordExist=1
 
 	if (recordExist==1):
+=======
+	RecordExist=0
+	for row in cursor:
+		RecordExist=1
+
+	if (RecordExist==1):
+>>>>>>> 785ddf862d473beadd8e6119082f6ce8aa02557c
 		cmd="UPDATE people SET Name="+ str(name)+"WHERE ID="+str(Id)
 
 	else:
