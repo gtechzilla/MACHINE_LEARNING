@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Detection</title>
+
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
+    <link rel="stylesheet" href="/static/style.css">
+    <!--<script src="/static/main.js"></script>-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#submit").click(function () {
+                var password = $("#password").val();
+                var confirmPassword = $("#confirm_password").val();
+                if (password != confirmPassword) {
+                    confirm_password.setCustomValidity("Passwords Don't Match");
+                    return false;
+                }
+                confirm_password.setCustomValidity('');
+                return true;
+            });
+        });
+    </script>
+</head>
+<body>
+  <div class="login-wrap">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+    <div class="login-form">
+      <form class="sign-in-htm" action="/login" method="POST">
+        <div class="group">
+          <label for="username" class="label">Username</label>
+          <input id="username" name="username" type="text" class="input" required>
+        </div>
+        <div class="group">
+          <label for="password" class="label">Password</label>
+          <input id="password" name="password" type="password" class="input" data-type="password" required>
+        </div>
+        <div class="group">
+          <input id="check" type="checkbox" class="check" checked>
+          <label for="check"><span class="icon"></span> Keep me Signed in</label>
+        </div>
+        <div class="group">
+          <input type="submit" class="button signin_btn" value="Sign In">
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <a href="#forgot">Forgot Password?</a>
+        </div>
+      </form>
+      <form class="sign-up-htm" action="/signup" method="POST">
+          <div class="group">
+              <label class="label">ID</label>
+              <input id="userid" name="userid" type="text" class="input" pattern="[0-9]{6}" title="ID should contain 6 numbers" required>
+          </div>
+        <div class="group">
+          <label for="username" class="label">Username</label>
+          <input name="username" type="text" class="input" required>
+        </div>
+          <div class="group">
+          <label for="usertype" class="label">User Type</label>
+              <input name="usertype" class="input" list="usertype" required>
+              <datalist id="usertype">
+                  <option value="Admin" class="input">
+                  <option value="Guard" class="input">
+              </datalist>
+          </div>
+
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="password" name="password" type="password" class="input" data-type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Confirm Password</label>
+          <input id="pass" type="password" class="input" data-type="password">
+        </div>
+
+        <!--<div class="group">-->
+          <!--<label for="pass" class="label">Password</label>-->
+          <!--<input id="password" type="password" class="input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"-->
+                 <!--title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>-->
+        <!--</div>-->
+        <!--<div class="group">-->
+          <!--<label for="confirm_password" class="label">Confirm Password</label>-->
+          <!--<input id="confirm_password" type="password" class="input" required>-->
+        <!--</div>-->
+        <div class="group">
+          <input type="submit" id="submit" class="button" value="Sign Up" >
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+            <label for="tab-1">Already Member?</label>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--<script>-->
+<!--btn = querySelectorAll('signin_btn');-->
+
+<!--btn.addEventListener('click', () => {-->
+<!--time = Date();-->
+<!--console.log(time);-->
+<!--})-->
+<!--</script>-->
+</body>
+
+</html>

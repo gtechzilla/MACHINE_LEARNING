@@ -1,0 +1,11 @@
+--2018-11-02 21:17:54--  https://www.google.com/url?sa=i
+Resolving www.google.com (www.google.com)... 216.58.223.100, 2a00:1450:401a:805::2004
+Connecting to www.google.com (www.google.com)|216.58.223.100|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘url?sa=i’
+
+url?sa=i                [<=>                 ]       0  --.-KB/s               url?sa=i                [ <=>                ]   1.30K  --.-KB/s    in 0s      
+
+2018-11-02 21:17:56 (8.72 MB/s) - ‘url?sa=i’ saved [1332]
+
